@@ -6,15 +6,17 @@ public class Libro {
     private String nombre;
     private String materia;
     private String descripcion;
+    private int grado;
 
     public Libro() {
     }
 
-    public Libro(String barCode, String nombre, String materia, String descripcion) {
+    public Libro(String barCode, String nombre, String materia, String descripcion, int grado) {
         this.barCode = barCode;
         this.nombre = nombre;
         this.materia = materia;
         this.descripcion = descripcion;
+        this.grado = grado;
     }
 
     public String getBarCode() {
@@ -47,6 +49,14 @@ public class Libro {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public int getGrado() {
+        return grado;
+    }
+
+    public void setGrado(int grado) {
+        this.grado = grado;
     }
 
     @Override

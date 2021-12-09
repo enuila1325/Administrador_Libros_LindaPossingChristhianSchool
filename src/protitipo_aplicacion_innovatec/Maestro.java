@@ -6,14 +6,16 @@ public class Maestro {
 
     private String nombre;
     private String id;
+    private String cargo;
     private ArrayList<Libro> librosEnPrestamo = new ArrayList<>();
 
     public Maestro() {
     }
 
-    public Maestro(String nombre, String id) {
+    public Maestro(String nombre, String id, String cargo) {
         this.nombre = nombre;
         this.id = id;
+        this.cargo = cargo;
     }
 
     public String getNombre() {
@@ -38,6 +40,14 @@ public class Maestro {
 
     public void setLibrosEnPrestamo(ArrayList<Libro> librosEnPrestamo) {
         this.librosEnPrestamo = librosEnPrestamo;
+    }
+
+    public String getCargo() {
+        return cargo;
+    }
+
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     @Override
