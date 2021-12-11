@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Alumno {
 
     private String nombre;
-    private String id;
+    private int id;
     private int grado;
     private ArrayList<Libro> librosEnPrestamo = new ArrayList<>();
 
     public Alumno() {
     }
 
-    public Alumno(String nombre, String id, int grado) {
+    public Alumno(String nombre, int id, int grado) {
         this.nombre = nombre;
         this.id = id;
         this.grado = grado;
@@ -26,11 +26,11 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

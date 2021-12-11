@@ -1,29 +1,33 @@
 package protitipo_aplicacion_innovatec;
 
+import java.util.Date;
+
 public class Prestamo {
 
-    private String idSolictante;
+    private int idSolictante;
     private String codBarrasLibroPrestado;
-    private String fechaDevolucionMaxima;
-    private String fechaDevolucion;
-    private String idEntrega;
+    private Date fechaDevolucionMaxima;
+    private Date fechaDevolucion;
+    private int idEntrega;
+    private String tipoSolicitante;
 
     public Prestamo() {
     }
 
-    public Prestamo(String idSolictante, String codBarrasLibroPrestado, String fechaDevolucionMaxima, String fechaDevolucion, String idEntrega) {
+    public Prestamo(int idSolictante, String codBarrasLibroPrestado, Date fechaDevolucionMaxima, Date fechaDevolucion, int idEntrega, String tipoSolicitante) {
         this.idSolictante = idSolictante;
         this.codBarrasLibroPrestado = codBarrasLibroPrestado;
         this.fechaDevolucionMaxima = fechaDevolucionMaxima;
         this.fechaDevolucion = fechaDevolucion;
         this.idEntrega = idEntrega;
+        this.tipoSolicitante = tipoSolicitante;
     }
 
-    public String getIdSolictante() {
+    public int getIdSolictante() {
         return idSolictante;
     }
 
-    public void setIdSolictante(String idSolictante) {
+    public void setIdSolictante(int idSolictante) {
         this.idSolictante = idSolictante;
     }
 
@@ -35,28 +39,36 @@ public class Prestamo {
         this.codBarrasLibroPrestado = codBarrasLibroPrestado;
     }
 
-    public String getFechaDevolucionMaxima() {
+    public Date getFechaDevolucionMaxima() {
         return fechaDevolucionMaxima;
     }
 
-    public void setFechaDevolucionMaxima(String fechaDevolucionMaxima) {
+    public void setFechaDevolucionMaxima(Date fechaDevolucionMaxima) {
         this.fechaDevolucionMaxima = fechaDevolucionMaxima;
     }
 
-    public String getFechaDevolucion() {
+    public Date getFechaDevolucion() {
         return fechaDevolucion;
     }
 
-    public void setFechaDevolucion(String fechaDevolucion) {
+    public void setFechaDevolucion(Date fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
 
-    public String getIdEntrega() {
+    public int getIdEntrega() {
         return idEntrega;
     }
 
-    public void setIdEntrega(String idEntrega) {
+    public void setIdEntrega(int idEntrega) {
         this.idEntrega = idEntrega;
+    }
+
+    public String getTipoSolicitante() {
+        return tipoSolicitante;
+    }
+
+    public void setTipoSolicitante(String tipoSolicitante) {
+        this.tipoSolicitante = tipoSolicitante;
     }
 
 }
