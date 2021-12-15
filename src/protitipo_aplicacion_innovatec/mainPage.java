@@ -2001,5 +2001,5 @@ public class mainPage extends javax.swing.JFrame {
     private ArrayList<Alumno> alumnos = new ArrayList<>();
     private ArrayList<Maestro> maestros = new ArrayList<>();
     private ArrayList<Prestamo> prestamos = new ArrayList<>();
-    private ConexionAccess ca = new ConexionAccess("C://Linda_Possing_Christhian_School.accdb");
+    private ConexionAccess ca = new ConexionAccess("C://Linda_Possing_Christhian_School.accdb");//Ruta donde se encuentre la base de datos en Access
 }
