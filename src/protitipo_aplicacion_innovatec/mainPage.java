@@ -103,6 +103,7 @@ public class mainPage extends javax.swing.JFrame {
         jb_añadirLibro_A_Inventario = new javax.swing.JButton();
         js_gradoCreacionLibro = new javax.swing.JSpinner();
         jLabel11 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
         pantalla_EliminarLibro = new javax.swing.JFrame();
         cb_barCodeLibroEliminar = new javax.swing.JComboBox<>();
         tf_nombreLibroDelete = new javax.swing.JTextField();
@@ -112,6 +113,7 @@ public class mainPage extends javax.swing.JFrame {
         t_listLibros = new javax.swing.JTable();
         cb_FiltroMateriaList = new javax.swing.JComboBox<>();
         cb_listLibroGrado = new javax.swing.JComboBox<>();
+        jLabel37 = new javax.swing.JLabel();
         pantalla_prestamos = new javax.swing.JFrame();
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -125,6 +127,7 @@ public class mainPage extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         tf_nombreLibroPrestar = new javax.swing.JTextField();
         cb_idLibroPrestar = new javax.swing.JComboBox<>();
+        jLabel38 = new javax.swing.JLabel();
         pantalla_devolucion = new javax.swing.JFrame();
         cb_idEntregaPrestamoLibro = new javax.swing.JComboBox<>();
         jLabel19 = new javax.swing.JLabel();
@@ -135,6 +138,7 @@ public class mainPage extends javax.swing.JFrame {
         jdc_entregaFinal = new com.toedter.calendar.JDateChooser();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
         creacion_alumno = new javax.swing.JFrame();
         tf_nombreAlumno = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -148,11 +152,13 @@ public class mainPage extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         cb_selectorGradoLista = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
         grupo_maestroAlumno = new javax.swing.ButtonGroup();
         listMaestros = new javax.swing.JFrame();
         jScrollPane4 = new javax.swing.JScrollPane();
         tb_listMaestros = new javax.swing.JTable();
         jLabel9 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
         creacionMaestro = new javax.swing.JFrame();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -168,6 +174,7 @@ public class mainPage extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         ta_horarioNewMaestro = new javax.swing.JTextArea();
         jb_crearMaestro = new javax.swing.JButton();
+        jLabel43 = new javax.swing.JLabel();
         pantalla_ActualizarAlumno = new javax.swing.JFrame();
         cb_idModAlumno = new javax.swing.JComboBox<>();
         tf_nombreAlumnoEdit = new javax.swing.JTextField();
@@ -194,6 +201,11 @@ public class mainPage extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jb_eliminarMaestro = new javax.swing.JButton();
         jb_actualizarMaestro = new javax.swing.JButton();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuLibro = new javax.swing.JMenu();
         menuItem_loadCSV = new javax.swing.JMenuItem();
@@ -215,88 +227,55 @@ public class mainPage extends javax.swing.JFrame {
         menuItem_modMaestro = new javax.swing.JMenuItem();
         menuItem_listMaestros = new javax.swing.JMenuItem();
 
+        pantalla_CreacionLibro.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         cb_barCodeLibro.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_barCodeLibroItemStateChanged(evt);
             }
         });
+        pantalla_CreacionLibro.getContentPane().add(cb_barCodeLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(495, 36, 158, -1));
 
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Codigo de Libro");
+        pantalla_CreacionLibro.getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 41, -1, -1));
 
         tf_nombreLibro.setEditable(false);
+        pantalla_CreacionLibro.getContentPane().add(tf_nombreLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 91, 315, -1));
 
-        cb_Materia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Math", "Reading", "Spelling", "Language", "Social Studies", "Arts", "Spanish", "History", "Computer", "Science", "Civics", "Otras..." }));
+        cb_Materia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Math", "Literature", "Word Building", "Etimology", "Social Studies", "Arts", "Spanish", "History", "Computer", "Science", "Biology", "Cívica", "Otras..." }));
+        pantalla_CreacionLibro.getContentPane().add(cb_Materia, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 156, 315, -1));
 
         ta_descrpcionLibro.setColumns(20);
         ta_descrpcionLibro.setRows(5);
         jScrollPane1.setViewportView(ta_descrpcionLibro);
 
-        jLabel2.setText("Descripcion del Libro");
+        pantalla_CreacionLibro.getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(67, 288, 586, 128));
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Descripcion del Libro");
+        pantalla_CreacionLibro.getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 254, -1, -1));
+
+        jb_añadirLibro_A_Inventario.setBackground(new java.awt.Color(0, 255, 0));
+        jb_añadirLibro_A_Inventario.setForeground(new java.awt.Color(0, 255, 0));
         jb_añadirLibro_A_Inventario.setText("Añadir");
         jb_añadirLibro_A_Inventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_añadirLibro_A_InventarioActionPerformed(evt);
             }
         });
+        pantalla_CreacionLibro.getContentPane().add(jb_añadirLibro_A_Inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 428, -1, -1));
 
         js_gradoCreacionLibro.setModel(new javax.swing.SpinnerNumberModel(1, 1, 9, 1));
+        pantalla_CreacionLibro.getContentPane().add(js_gradoCreacionLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 194, 83, -1));
 
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("GRADO");
+        pantalla_CreacionLibro.getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(488, 199, -1, -1));
 
-        javax.swing.GroupLayout pantalla_CreacionLibroLayout = new javax.swing.GroupLayout(pantalla_CreacionLibro.getContentPane());
-        pantalla_CreacionLibro.getContentPane().setLayout(pantalla_CreacionLibroLayout);
-        pantalla_CreacionLibroLayout.setHorizontalGroup(
-            pantalla_CreacionLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pantalla_CreacionLibroLayout.createSequentialGroup()
-                .addGap(321, 321, 321)
-                .addComponent(jb_añadirLibro_A_Inventario)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_CreacionLibroLayout.createSequentialGroup()
-                .addContainerGap(67, Short.MAX_VALUE)
-                .addGroup(pantalla_CreacionLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_CreacionLibroLayout.createSequentialGroup()
-                        .addGroup(pantalla_CreacionLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_CreacionLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(pantalla_CreacionLibroLayout.createSequentialGroup()
-                                    .addComponent(jLabel1)
-                                    .addGap(69, 69, 69)
-                                    .addComponent(cb_barCodeLibro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addComponent(tf_nombreLibro)
-                                .addComponent(cb_Materia, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_CreacionLibroLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(41, 41, 41)
-                                .addComponent(js_gradoCreacionLibro, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(67, 67, 67))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_CreacionLibroLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(299, 299, 299))))
-        );
-        pantalla_CreacionLibroLayout.setVerticalGroup(
-            pantalla_CreacionLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pantalla_CreacionLibroLayout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(pantalla_CreacionLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cb_barCodeLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(29, 29, 29)
-                .addComponent(tf_nombreLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(cb_Materia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(pantalla_CreacionLibroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(js_gradoCreacionLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGap(34, 34, 34)
-                .addComponent(jLabel2)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jb_añadirLibro_A_Inventario)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
+        jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2186502.jpg"))); // NOI18N
+        jLabel32.setToolTipText("");
+        pantalla_CreacionLibro.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         cb_barCodeLibroEliminar.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -306,6 +285,8 @@ public class mainPage extends javax.swing.JFrame {
 
         tf_nombreLibroDelete.setEditable(false);
 
+        jb_deleteLibro.setBackground(new java.awt.Color(255, 0, 0));
+        jb_deleteLibro.setForeground(new java.awt.Color(255, 0, 0));
         jb_deleteLibro.setText("Eliminar");
         jb_deleteLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,6 +322,8 @@ public class mainPage extends javax.swing.JFrame {
                 .addGap(35, 35, 35))
         );
 
+        jd_listaLibros.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         t_listLibros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -366,12 +349,15 @@ public class mainPage extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(t_listLibros);
 
+        jd_listaLibros.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 130, 671, 301));
+
         cb_FiltroMateriaList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----------------------------------------------------------------------", "Todos las materias", "Math", "Reading", "Spelling", "Language", "Social Studies", "Arts", "Spanish", "History", "Computer", "Science", "Civics", "Otras..." }));
         cb_FiltroMateriaList.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_FiltroMateriaListItemStateChanged(evt);
             }
         });
+        jd_listaLibros.getContentPane().add(cb_FiltroMateriaList, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 40, 315, -1));
 
         cb_listLibroGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----------------", "TODOS", "1ero", "2do", "3ero", "4to", "5to", "6to", "7mo", "8vo", "9no" }));
         cb_listLibroGrado.addItemListener(new java.awt.event.ItemListener() {
@@ -379,38 +365,20 @@ public class mainPage extends javax.swing.JFrame {
                 cb_listLibroGradoItemStateChanged(evt);
             }
         });
+        jd_listaLibros.getContentPane().add(cb_listLibroGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 84, 100, -1));
 
-        javax.swing.GroupLayout jd_listaLibrosLayout = new javax.swing.GroupLayout(jd_listaLibros.getContentPane());
-        jd_listaLibros.getContentPane().setLayout(jd_listaLibrosLayout);
-        jd_listaLibrosLayout.setHorizontalGroup(
-            jd_listaLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jd_listaLibrosLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addGroup(jd_listaLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_listaLibrosLayout.createSequentialGroup()
-                        .addGroup(jd_listaLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cb_FiltroMateriaList, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_listLibroGrado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(87, 87, 87))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_listaLibrosLayout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 671, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(35, 35, 35))))
-        );
-        jd_listaLibrosLayout.setVerticalGroup(
-            jd_listaLibrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_listaLibrosLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addComponent(cb_FiltroMateriaList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(cb_listLibroGrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
+        jLabel37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2186502.jpg"))); // NOI18N
+        jd_listaLibros.getContentPane().add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 490));
 
+        pantalla_prestamos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Solicitante:");
+        pantalla_prestamos.getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 86, -1));
 
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Fecha de devolucion maxima:");
+        pantalla_prestamos.getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 230, -1, -1));
 
         grupo_maestroAlumno.add(rb_maestroSolicitante);
         rb_maestroSolicitante.setText("Personal");
@@ -419,6 +387,7 @@ public class mainPage extends javax.swing.JFrame {
                 rb_maestroSolicitanteItemStateChanged(evt);
             }
         });
+        pantalla_prestamos.getContentPane().add(rb_maestroSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
 
         grupo_maestroAlumno.add(rb_alumnoSolicitante);
         rb_alumnoSolicitante.setText("Alumno");
@@ -427,6 +396,8 @@ public class mainPage extends javax.swing.JFrame {
                 rb_alumnoSolicitanteItemStateChanged(evt);
             }
         });
+        pantalla_prestamos.getContentPane().add(rb_alumnoSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
+        pantalla_prestamos.getContentPane().add(jd_fechaMaximaDevoluion, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 220, 210, -1));
 
         jb_crearPrestamo.setText("Ingresar Prestamo al Sistema");
         jb_crearPrestamo.addActionListener(new java.awt.event.ActionListener() {
@@ -434,177 +405,78 @@ public class mainPage extends javax.swing.JFrame {
                 jb_crearPrestamoActionPerformed(evt);
             }
         });
+        pantalla_prestamos.getContentPane().add(jb_crearPrestamo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 390, -1, -1));
 
         cb_alumnoSolictante.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_alumnoSolictanteItemStateChanged(evt);
             }
         });
+        pantalla_prestamos.getContentPane().add(cb_alumnoSolictante, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 140, 140, -1));
 
         cb_maestroSolictante.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_maestroSolictanteItemStateChanged(evt);
             }
         });
+        pantalla_prestamos.getContentPane().add(cb_maestroSolictante, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 190, 140, -1));
 
         tf_nombreSolicitante.setEditable(false);
+        pantalla_prestamos.getContentPane().add(tf_nombreSolicitante, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 400, -1));
 
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Libro Solicitado:");
+        pantalla_prestamos.getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, -1, -1));
 
         tf_nombreLibroPrestar.setEditable(false);
+        pantalla_prestamos.getContentPane().add(tf_nombreLibroPrestar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 140, 210, -1));
 
         cb_idLibroPrestar.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_idLibroPrestarItemStateChanged(evt);
             }
         });
+        pantalla_prestamos.getContentPane().add(cb_idLibroPrestar, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 90, -1));
 
-        javax.swing.GroupLayout pantalla_prestamosLayout = new javax.swing.GroupLayout(pantalla_prestamos.getContentPane());
-        pantalla_prestamos.getContentPane().setLayout(pantalla_prestamosLayout);
-        pantalla_prestamosLayout.setHorizontalGroup(
-            pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                .addGap(256, 256, 256)
-                .addComponent(jb_crearPrestamo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_prestamosLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                        .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                                    .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel12)
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_prestamosLayout.createSequentialGroup()
-                                    .addComponent(cb_idLibroPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(27, 27, 27)))
-                            .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                                .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel10)
-                                    .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                                        .addGap(266, 266, 266)
-                                        .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(rb_alumnoSolicitante)
-                                            .addComponent(rb_maestroSolicitante))))
-                                .addGap(9, 9, 9)))
-                        .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jd_fechaMaximaDevoluion, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                            .addComponent(tf_nombreLibroPrestar)))
-                    .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cb_alumnoSolictante, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cb_maestroSolictante, 0, 182, Short.MAX_VALUE)))
-                    .addComponent(tf_nombreSolicitante))
-                .addGap(62, 62, 62))
-        );
-        pantalla_prestamosLayout.setVerticalGroup(
-            pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_prestamosLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                        .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rb_alumnoSolicitante)
-                            .addComponent(cb_alumnoSolictante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(rb_maestroSolicitante)
-                            .addComponent(cb_maestroSolictante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_prestamosLayout.createSequentialGroup()
-                        .addComponent(jLabel8)
-                        .addGap(26, 26, 26)))
-                .addGap(27, 27, 27)
-                .addComponent(tf_nombreSolicitante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(pantalla_prestamosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel12)
-                            .addComponent(tf_nombreLibroPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_idLibroPrestar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(61, 61, 61)
-                        .addComponent(jLabel10))
-                    .addGroup(pantalla_prestamosLayout.createSequentialGroup()
-                        .addGap(149, 149, 149)
-                        .addComponent(jd_fechaMaximaDevoluion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(jb_crearPrestamo)
-                .addGap(28, 28, 28))
-        );
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2094188.jpg"))); // NOI18N
+        pantalla_prestamos.getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 480));
+
+        pantalla_devolucion.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         cb_idEntregaPrestamoLibro.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_idEntregaPrestamoLibroItemStateChanged(evt);
             }
         });
+        pantalla_devolucion.getContentPane().add(cb_idEntregaPrestamoLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 62, 209, -1));
 
         jLabel19.setText("Código de Barras Libro en Prestamo:");
+        pantalla_devolucion.getContentPane().add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 129, -1, -1));
 
         jLabel20.setText("Entregado por:");
+        pantalla_devolucion.getContentPane().add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 220, -1, -1));
+        pantalla_devolucion.getContentPane().add(tf_codBarrasLibroEntregado, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 163, 209, -1));
+        pantalla_devolucion.getContentPane().add(tf_entregadoPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 259, 209, -1));
 
+        jb_entregarLibro.setBackground(new java.awt.Color(0, 204, 0));
+        jb_entregarLibro.setForeground(new java.awt.Color(0, 255, 0));
         jb_entregarLibro.setText("Confirmar Entrega");
         jb_entregarLibro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_entregarLibroActionPerformed(evt);
             }
         });
+        pantalla_devolucion.getContentPane().add(jb_entregarLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(549, 364, -1, -1));
+        pantalla_devolucion.getContentPane().add(jdc_entregaFinal, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 254, 209, -1));
 
         jLabel21.setText("Fecha Entrega:");
+        pantalla_devolucion.getContentPane().add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 220, -1, -1));
 
         jLabel22.setText("ID ENTREGA:");
+        pantalla_devolucion.getContentPane().add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(474, 34, -1, -1));
 
-        javax.swing.GroupLayout pantalla_devolucionLayout = new javax.swing.GroupLayout(pantalla_devolucion.getContentPane());
-        pantalla_devolucion.getContentPane().setLayout(pantalla_devolucionLayout);
-        pantalla_devolucionLayout.setHorizontalGroup(
-            pantalla_devolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_devolucionLayout.createSequentialGroup()
-                .addGroup(pantalla_devolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pantalla_devolucionLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jb_entregarLibro))
-                    .addGroup(pantalla_devolucionLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addGroup(pantalla_devolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(tf_codBarrasLibroEntregado)
-                            .addComponent(tf_entregadoPor))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 196, Short.MAX_VALUE)
-                        .addGroup(pantalla_devolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel21)
-                            .addGroup(pantalla_devolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(cb_idEntregaPrestamoLibro, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jdc_entregaFinal, javax.swing.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE))
-                            .addComponent(jLabel22))))
-                .addGap(37, 37, 37))
-        );
-        pantalla_devolucionLayout.setVerticalGroup(
-            pantalla_devolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pantalla_devolucionLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cb_idEntregaPrestamoLibro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(jLabel19)
-                .addGap(18, 18, 18)
-                .addComponent(tf_codBarrasLibroEntregado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addGroup(pantalla_devolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21))
-                .addGap(18, 18, 18)
-                .addGroup(pantalla_devolucionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tf_entregadoPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jdc_entregaFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(jb_entregarLibro)
-                .addGap(24, 24, 24))
-        );
+        jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2094188.jpg"))); // NOI18N
+        pantalla_devolucion.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 420));
 
         jLabel3.setText("Nombre:");
 
@@ -614,6 +486,8 @@ public class mainPage extends javax.swing.JFrame {
 
         jLabel5.setText("INGRESAR NUEVO ALUMNO AL SISTEMA");
 
+        jb_newAlumno.setBackground(new java.awt.Color(0, 204, 0));
+        jb_newAlumno.setForeground(new java.awt.Color(0, 204, 0));
         jb_newAlumno.setText("CREAR");
         jb_newAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -664,6 +538,8 @@ public class mainPage extends javax.swing.JFrame {
                 .addGap(28, 28, 28))
         );
 
+        List_alumnos.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         tb_listAlumnos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -689,7 +565,11 @@ public class mainPage extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tb_listAlumnos);
 
+        List_alumnos.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 131, 614, 296));
+
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("ALUMNOS EN EL SISTEMA");
+        List_alumnos.getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(57, 51, 210, -1));
 
         cb_selectorGradoLista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "Preparatoria", "1ero", "2do", "3er", "4to", "5to", "6to", "7mo", "8vo", "9no" }));
         cb_selectorGradoLista.addItemListener(new java.awt.event.ItemListener() {
@@ -697,47 +577,16 @@ public class mainPage extends javax.swing.JFrame {
                 cb_selectorGradoListaItemStateChanged(evt);
             }
         });
+        List_alumnos.getContentPane().add(cb_selectorGradoLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(559, 75, -1, -1));
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Grados:");
+        List_alumnos.getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 50, -1, -1));
 
-        javax.swing.GroupLayout List_alumnosLayout = new javax.swing.GroupLayout(List_alumnos.getContentPane());
-        List_alumnos.getContentPane().setLayout(List_alumnosLayout);
-        List_alumnosLayout.setHorizontalGroup(
-            List_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(List_alumnosLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(List_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(List_alumnosLayout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 614, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(49, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, List_alumnosLayout.createSequentialGroup()
-                        .addGroup(List_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(List_alumnosLayout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel7))
-                            .addGroup(List_alumnosLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(cb_selectorGradoLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(59, 59, 59))))
-        );
-        List_alumnosLayout.setVerticalGroup(
-            List_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(List_alumnosLayout.createSequentialGroup()
-                .addGroup(List_alumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(List_alumnosLayout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, List_alumnosLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel7)
-                        .addGap(18, 18, 18)))
-                .addComponent(cb_selectorGradoLista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53))
-        );
+        jLabel40.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/0mRXQU.jpg"))); // NOI18N
+        List_alumnos.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
+
+        listMaestros.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tb_listMaestros.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -764,110 +613,64 @@ public class mainPage extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(tb_listMaestros);
 
+        listMaestros.getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 122, 969, -1));
+
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("MAESTROS EN SISTEMA:");
+        listMaestros.getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 63, -1, -1));
 
-        javax.swing.GroupLayout listMaestrosLayout = new javax.swing.GroupLayout(listMaestros.getContentPane());
-        listMaestros.getContentPane().setLayout(listMaestrosLayout);
-        listMaestrosLayout.setHorizontalGroup(
-            listMaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listMaestrosLayout.createSequentialGroup()
-                .addGap(55, 55, 55)
-                .addGroup(listMaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 969, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
-        );
-        listMaestrosLayout.setVerticalGroup(
-            listMaestrosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(listMaestrosLayout.createSequentialGroup()
-                .addGap(63, 63, 63)
-                .addComponent(jLabel9)
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
-        );
+        jLabel41.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/0mRXQU.jpg"))); // NOI18N
+        listMaestros.getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 610));
 
+        creacionMaestro.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Nombre:");
+        creacionMaestro.getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 65, -1, -1));
 
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Cargo/Servicio:");
+        creacionMaestro.getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 114, -1, -1));
 
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Correo:");
+        creacionMaestro.getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 160, -1, -1));
 
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Horario:");
+        creacionMaestro.getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 303, -1, -1));
 
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Numero de telefono 1:");
+        creacionMaestro.getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 202, -1, -1));
 
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
         jLabel18.setText("Numero de Telefono 2:");
+        creacionMaestro.getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(135, 247, -1, -1));
+        creacionMaestro.getContentPane().add(tf_NombreNuevoMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 61, 232, -1));
+        creacionMaestro.getContentPane().add(tf_cargoNuevoMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 110, 232, -1));
+        creacionMaestro.getContentPane().add(tf_correoNuevoMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 156, 232, -1));
+        creacionMaestro.getContentPane().add(tf_newNumero1, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 198, 232, -1));
+        creacionMaestro.getContentPane().add(tf_newNumero2, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 243, 232, -1));
 
         ta_horarioNewMaestro.setColumns(20);
         ta_horarioNewMaestro.setRows(5);
         jScrollPane5.setViewportView(ta_horarioNewMaestro);
 
+        creacionMaestro.getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(405, 303, 232, -1));
+
+        jb_crearMaestro.setBackground(new java.awt.Color(0, 204, 0));
+        jb_crearMaestro.setForeground(new java.awt.Color(0, 204, 0));
         jb_crearMaestro.setText("Ingresar al sistema");
         jb_crearMaestro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_crearMaestroActionPerformed(evt);
             }
         });
+        creacionMaestro.getContentPane().add(jb_crearMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 417, -1, -1));
 
-        javax.swing.GroupLayout creacionMaestroLayout = new javax.swing.GroupLayout(creacionMaestro.getContentPane());
-        creacionMaestro.getContentPane().setLayout(creacionMaestroLayout);
-        creacionMaestroLayout.setHorizontalGroup(
-            creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(creacionMaestroLayout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addGroup(creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addComponent(jLabel16)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel17)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel14))
-                .addGap(143, 143, 143)
-                .addGroup(creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_NombreNuevoMaestro)
-                    .addComponent(tf_cargoNuevoMaestro)
-                    .addComponent(tf_correoNuevoMaestro)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_newNumero2)
-                    .addComponent(tf_newNumero1))
-                .addGap(83, 83, 83))
-            .addGroup(creacionMaestroLayout.createSequentialGroup()
-                .addGap(284, 284, 284)
-                .addComponent(jb_crearMaestro)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        creacionMaestroLayout.setVerticalGroup(
-            creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(creacionMaestroLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(tf_NombreNuevoMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
-                .addGroup(creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(tf_cargoNuevoMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel15)
-                    .addComponent(tf_correoNuevoMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel17)
-                    .addComponent(tf_newNumero1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21)
-                .addGroup(creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel18)
-                    .addComponent(tf_newNumero2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(creacionMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel16)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addComponent(jb_crearMaestro)
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
+        jLabel43.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2186502.jpg"))); // NOI18N
+        creacionMaestro.getContentPane().add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         cb_idModAlumno.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -881,6 +684,8 @@ public class mainPage extends javax.swing.JFrame {
 
         jLabel25.setText("Grado");
 
+        jb_modAlumno.setBackground(new java.awt.Color(0, 204, 0));
+        jb_modAlumno.setForeground(new java.awt.Color(0, 204, 0));
         jb_modAlumno.setText("Actualizar");
         jb_modAlumno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -945,27 +750,49 @@ public class mainPage extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
+        pantalla_modMaestro.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         cb_idModMaestro.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_idModMaestroItemStateChanged(evt);
             }
         });
+        pantalla_modMaestro.getContentPane().add(cb_idModMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(528, 26, 151, -1));
 
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText("Correo:");
+        pantalla_modMaestro.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 174, -1, -1));
 
+        jLabel27.setForeground(new java.awt.Color(0, 0, 0));
         jLabel27.setText("Horario:");
+        pantalla_modMaestro.getContentPane().add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 327, -1, -1));
 
+        jLabel28.setForeground(new java.awt.Color(0, 0, 0));
         jLabel28.setText("Numero de celular:");
+        pantalla_modMaestro.getContentPane().add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 230, -1, -1));
 
+        jLabel29.setForeground(new java.awt.Color(0, 0, 0));
         jLabel29.setText("Numero de telefono:");
+        pantalla_modMaestro.getContentPane().add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 275, -1, -1));
+        pantalla_modMaestro.getContentPane().add(tf_nombreModMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 79, 432, -1));
+        pantalla_modMaestro.getContentPane().add(tf_cargoModMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 128, 432, -1));
+        pantalla_modMaestro.getContentPane().add(tf_correoModMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 174, 432, -1));
+        pantalla_modMaestro.getContentPane().add(tf_numero1mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 230, 432, -1));
+        pantalla_modMaestro.getContentPane().add(tf_numero2mod, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 275, 432, -1));
 
+        jLabel30.setForeground(new java.awt.Color(0, 0, 0));
         jLabel30.setText("Nombre:");
+        pantalla_modMaestro.getContentPane().add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 79, -1, -1));
 
         ta_modHorario.setColumns(20);
         ta_modHorario.setRows(5);
         jScrollPane6.setViewportView(ta_modHorario);
 
+        pantalla_modMaestro.getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(247, 335, 432, -1));
+
+        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
         jLabel31.setText("Cargo/Servicio:");
+        pantalla_modMaestro.getContentPane().add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 128, -1, -1));
 
         jb_eliminarMaestro.setBackground(new java.awt.Color(255, 0, 0));
         jb_eliminarMaestro.setForeground(new java.awt.Color(255, 0, 0));
@@ -975,87 +802,40 @@ public class mainPage extends javax.swing.JFrame {
                 jb_eliminarMaestroActionPerformed(evt);
             }
         });
+        pantalla_modMaestro.getContentPane().add(jb_eliminarMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 436, -1, -1));
 
+        jb_actualizarMaestro.setBackground(new java.awt.Color(0, 255, 0));
+        jb_actualizarMaestro.setForeground(new java.awt.Color(0, 255, 0));
         jb_actualizarMaestro.setText("Actualizar");
         jb_actualizarMaestro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_actualizarMaestroActionPerformed(evt);
             }
         });
+        pantalla_modMaestro.getContentPane().add(jb_actualizarMaestro, new org.netbeans.lib.awtextra.AbsoluteConstraints(592, 436, -1, -1));
 
-        javax.swing.GroupLayout pantalla_modMaestroLayout = new javax.swing.GroupLayout(pantalla_modMaestro.getContentPane());
-        pantalla_modMaestro.getContentPane().setLayout(pantalla_modMaestroLayout);
-        pantalla_modMaestroLayout.setHorizontalGroup(
-            pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pantalla_modMaestroLayout.createSequentialGroup()
-                .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pantalla_modMaestroLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cb_idModMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pantalla_modMaestroLayout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel30)
-                            .addComponent(jLabel27)
-                            .addComponent(jLabel29)
-                            .addComponent(jLabel28)
-                            .addComponent(jLabel26)
-                            .addComponent(jLabel31)
-                            .addComponent(jb_eliminarMaestro))
-                        .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pantalla_modMaestroLayout.createSequentialGroup()
-                                .addGap(64, 64, 64)
-                                .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(tf_nombreModMaestro, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
-                                    .addComponent(tf_cargoModMaestro)
-                                    .addComponent(tf_correoModMaestro)
-                                    .addComponent(tf_numero2mod)
-                                    .addComponent(tf_numero1mod)
-                                    .addComponent(jScrollPane6)))
-                            .addGroup(pantalla_modMaestroLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jb_actualizarMaestro)))))
-                .addGap(41, 41, 41))
-        );
-        pantalla_modMaestroLayout.setVerticalGroup(
-            pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pantalla_modMaestroLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(cb_idModMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27)
-                .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_nombreModMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel30))
-                .addGap(25, 25, 25)
-                .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_cargoModMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel31))
-                .addGap(22, 22, 22)
-                .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_correoModMaestro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel26))
-                .addGap(32, 32, 32)
-                .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_numero1mod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel28))
-                .addGap(21, 21, 21)
-                .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pantalla_modMaestroLayout.createSequentialGroup()
-                        .addComponent(tf_numero2mod, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(36, 36, 36)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pantalla_modMaestroLayout.createSequentialGroup()
-                        .addComponent(jLabel29)
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel27)))
-                .addGap(18, 18, 18)
-                .addGroup(pantalla_modMaestroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jb_actualizarMaestro)
-                    .addComponent(jb_eliminarMaestro))
-                .addGap(0, 12, Short.MAX_VALUE))
-        );
+        jLabel42.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/0mRXQU.jpg"))); // NOI18N
+        pantalla_modMaestro.getContentPane().add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 480));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel34.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/WhatsApp Image 2021-12-11 at 20.14.51.jpeg"))); // NOI18N
+        jLabel34.setText("jLabel34");
+        getContentPane().add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 420, 400));
+
+        jLabel35.setFont(new java.awt.Font("HP Simplified Jpan Light", 1, 18)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel35.setText("SISTEMA DE CONTROL");
+        getContentPane().add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, -1, -1));
+
+        jLabel36.setFont(new java.awt.Font("HP Simplified Light", 2, 18)); // NOI18N
+        jLabel36.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel36.setText("PACESCANNER");
+        getContentPane().add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(591, 420, 110, -1));
+
+        jLabel33.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/0mRXQU.jpg"))); // NOI18N
+        getContentPane().add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 461));
 
         menuLibro.setText("Libros");
 
@@ -1182,17 +962,6 @@ public class mainPage extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 457, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -1219,53 +988,63 @@ public class mainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItem_loadCSVActionPerformed
 
     private void jb_añadirLibro_A_InventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_añadirLibro_A_InventarioActionPerformed
-        String nombre = "", materia = "", barCode = "", descripcion = "";
-        nombre = nombresLibros.get(cb_barCodeLibro.getSelectedIndex());
-        materia = cb_Materia.getSelectedItem().toString();
-        barCode = barCodes.get(cb_barCodeLibro.getSelectedIndex());
-        descripcion = ta_descrpcionLibro.getText();
-        int grado = Integer.parseInt(js_gradoCreacionLibro.getValue().toString());
-        Libro l = new Libro(barCode, nombre, materia, descripcion, grado);
-        pantalla_CreacionLibro.setVisible(false);
-        int eleccion = JOptionPane.showConfirmDialog(null, "Libro ingresado. ¿Desea actualizar el sistema?", "ACTUALIZAR", JOptionPane.YES_NO_CANCEL_OPTION);
-        boolean flag = false;
-        if (eleccion == JOptionPane.YES_OPTION) {
-            for (Libro libro : libros) {
-                if (libro.getBarCode().equals(barCode)) {
-                    flag = true;
-                }
-            }
-            if (flag) {
-                JOptionPane.showMessageDialog(null, "El codigo de barras ingresado ya existe en el sistema. Valide el ingreso de sus datos", "ERROR", JOptionPane.ERROR_MESSAGE);
+        try {
+            if (fichero == null) {
+                JOptionPane.showMessageDialog(null, "No hay ningun documento .CSV en el sistema. Inicialice uno e intente nuevamente", "ERROR", JOptionPane.ERROR_MESSAGE);
             } else {
-                ca.conectar();
-                try {
-                    ca.query.execute("INSERT INTO Libros"
-                            + " (Codigo, Titulo, Materia, Descripcion, Grado)"
-                            + " VALUES ('" + barCode + "', '" + nombre + "', '" + materia + "', '" + descripcion + "', '" + grado + "')");
-                    ca.commit();
-                } catch (SQLException ex) {
-                    ex.printStackTrace();
-                    JOptionPane.showMessageDialog(null, "Revise los datos ingresados. Es posible que haya ingresado algun dato erróneo.\nPuede que:\n-El codigo de barras ya exista en el sistema"
-                            + "\n-El grado no se haya ingresado como valor numérico\n-Haya ingresado una descrpcion inválida (vacía o nula).\n-no se haya ingresado un titulo correcto.");
+                String nombre = "", materia = "", barCode = "", descripcion = "";
+                nombre = nombresLibros.get(cb_barCodeLibro.getSelectedIndex());
+                materia = cb_Materia.getSelectedItem().toString();
+                barCode = barCodes.get(cb_barCodeLibro.getSelectedIndex());
+                descripcion = ta_descrpcionLibro.getText();
+                int grado = Integer.parseInt(js_gradoCreacionLibro.getValue().toString());
+                Libro l = new Libro(barCode, nombre, materia, descripcion, grado);
+                pantalla_CreacionLibro.setVisible(false);
+                int eleccion = JOptionPane.showConfirmDialog(null, "Libro ingresado. ¿Desea actualizar el sistema?", "ACTUALIZAR", JOptionPane.YES_NO_CANCEL_OPTION);
+                boolean flag = false;
+                if (eleccion == JOptionPane.YES_OPTION) {
+                    for (Libro libro : libros) {
+                        if (libro.getBarCode().equals(barCode)) {
+                            flag = true;
+                        }
+                    }
+                    if (flag) {
+                        JOptionPane.showMessageDialog(null, "El codigo de barras ingresado ya existe en el sistema. Valide el ingreso de sus datos", "ERROR", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        ca.conectar();
+                        try {
+                            ca.query.execute("INSERT INTO Libros"
+                                    + " (Codigo, Titulo, Materia, Descripcion, Grado)"
+                                    + " VALUES ('" + barCode + "', '" + nombre + "', '" + materia + "', '" + descripcion + "', '" + grado + "')");
+                            ca.commit();
+                        } catch (SQLException ex) {
+                            ex.printStackTrace();
+                            JOptionPane.showMessageDialog(null, "Revise los datos ingresados. Es posible que haya ingresado algun dato erróneo.\nPuede que:\n-El codigo de barras ya exista en el sistema"
+                                    + "\n-El grado no se haya ingresado como valor numérico\n-Haya ingresado una descrpcion inválida (vacía o nula).\n-no se haya ingresado un titulo correcto.");
+                        }
+                        libros.add(l);
+                        ca.desconectar();
+                    }
                 }
-                libros.add(l);
-                ca.desconectar();
             }
+        } catch (Exception ex) {
         }
     }//GEN-LAST:event_jb_añadirLibro_A_InventarioActionPerformed
 
     private void menuItem_edLibriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_edLibriActionPerformed
-        DefaultComboBoxModel cbm = (DefaultComboBoxModel) cb_barCodeLibroEliminar.getModel();
-        cbm.removeAllElements();
-        for (int i = 0; i < libros.size(); i++) {
-            cbm.addElement(libros.get(i).getBarCode());
+        try {
+            DefaultComboBoxModel cbm = (DefaultComboBoxModel) cb_barCodeLibroEliminar.getModel();
+            cbm.removeAllElements();
+            for (int i = 0; i < libros.size(); i++) {
+                cbm.addElement(libros.get(i).getBarCode());
+            }
+            cb_barCodeLibroEliminar.setModel(cbm);
+            pantalla_EliminarLibro.pack();
+            pantalla_EliminarLibro.setLocationRelativeTo(null);
+            pantalla_EliminarLibro.setAlwaysOnTop(true);
+            pantalla_EliminarLibro.setVisible(true);
+        } catch (Exception ex) {
         }
-        cb_barCodeLibroEliminar.setModel(cbm);
-        pantalla_EliminarLibro.pack();
-        pantalla_EliminarLibro.setLocationRelativeTo(null);
-        pantalla_EliminarLibro.setAlwaysOnTop(true);
-        pantalla_EliminarLibro.setVisible(true);
     }//GEN-LAST:event_menuItem_edLibriActionPerformed
 
     private void cb_barCodeLibroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_barCodeLibroItemStateChanged
@@ -1340,21 +1119,27 @@ public class mainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jb_deleteLibroActionPerformed
 
     private void menuItem_readLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_readLibrosActionPerformed
-        DefaultTableModel tm = (DefaultTableModel) t_listLibros.getModel();
-        for (Libro l : libros) {
-            Object datos[] = new Object[5];
-            datos[1] = l.getNombre();
-            datos[0] = l.getBarCode();
-            datos[2] = l.getMateria();
-            datos[3] = l.getDescripcion();
-            datos[4] = l.getGrado();
-            tm.addRow(datos);
+        try {
+            DefaultTableModel tm = (DefaultTableModel) t_listLibros.getModel();
+            while (tm.getRowCount() > 0) {
+                tm.removeRow(0);
+            }
+            for (Libro l : libros) {
+                Object datos[] = new Object[5];
+                datos[1] = l.getNombre();
+                datos[0] = l.getBarCode();
+                datos[2] = l.getMateria();
+                datos[3] = l.getDescripcion();
+                datos[4] = l.getGrado();
+                tm.addRow(datos);
+            }
+            t_listLibros.setModel(tm);
+            jd_listaLibros.pack();
+            jd_listaLibros.setModal(true);
+            jd_listaLibros.setLocationRelativeTo(null);
+            jd_listaLibros.setVisible(true);
+        } catch (Exception ex) {
         }
-        t_listLibros.setModel(tm);
-        jd_listaLibros.pack();
-        jd_listaLibros.setModal(true);
-        jd_listaLibros.setLocationRelativeTo(null);
-        jd_listaLibros.setVisible(true);
     }//GEN-LAST:event_menuItem_readLibrosActionPerformed
 
     private void cb_FiltroMateriaListItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_FiltroMateriaListItemStateChanged
@@ -1419,39 +1204,45 @@ public class mainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_FiltroMateriaListItemStateChanged
 
     private void menuItem_newPrestamoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_newPrestamoActionPerformed
-        DefaultComboBoxModel cbm = (DefaultComboBoxModel) cb_alumnoSolictante.getModel();
-        DefaultComboBoxModel cbm2 = (DefaultComboBoxModel) cb_maestroSolictante.getModel();
-        DefaultComboBoxModel cbm3 = (DefaultComboBoxModel) cb_idLibroPrestar.getModel();
-        cbm.removeAllElements();
-        cbm2.removeAllElements();
-        cbm3.removeAllElements();
-        for (Libro l : libros) {
-            cbm3.addElement(l.getBarCode());
+        try {
+            DefaultComboBoxModel cbm = (DefaultComboBoxModel) cb_alumnoSolictante.getModel();
+            DefaultComboBoxModel cbm2 = (DefaultComboBoxModel) cb_maestroSolictante.getModel();
+            DefaultComboBoxModel cbm3 = (DefaultComboBoxModel) cb_idLibroPrestar.getModel();
+            cbm.removeAllElements();
+            cbm2.removeAllElements();
+            cbm3.removeAllElements();
+            for (Libro l : libros) {
+                cbm3.addElement(l.getBarCode());
+            }
+            for (Alumno a : alumnos) {
+                cbm.addElement(a.getId());
+            }
+            for (Maestro m : maestros) {
+                cbm2.addElement(m.getId());
+            }
+            cb_alumnoSolictante.setModel(cbm);
+            cb_maestroSolictante.setModel(cbm2);
+            cb_idLibroPrestar.setModel(cbm3);
+            pantalla_prestamos.pack();
+            pantalla_prestamos.setLocationRelativeTo(null);
+            pantalla_prestamos.setVisible(true);
+        } catch (Exception ex) {
         }
-        for (Alumno a : alumnos) {
-            cbm.addElement(a.getId());
-        }
-        for (Maestro m : maestros) {
-            cbm2.addElement(m.getId());
-        }
-        cb_alumnoSolictante.setModel(cbm);
-        cb_maestroSolictante.setModel(cbm2);
-        cb_idLibroPrestar.setModel(cbm3);
-        pantalla_prestamos.pack();
-        pantalla_prestamos.setLocationRelativeTo(null);
-        pantalla_prestamos.setVisible(true);
     }//GEN-LAST:event_menuItem_newPrestamoActionPerformed
 
     private void menuItem_devolverLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_devolverLibroActionPerformed
-        DefaultComboBoxModel cbm = (DefaultComboBoxModel) cb_idEntregaPrestamoLibro.getModel();
-        cbm.removeAllElements();
-        for (Prestamo p : prestamos) {
-            cbm.addElement(p.getIdEntrega());
+        try {
+            DefaultComboBoxModel cbm = (DefaultComboBoxModel) cb_idEntregaPrestamoLibro.getModel();
+            cbm.removeAllElements();
+            for (Prestamo p : prestamos) {
+                cbm.addElement(p.getIdEntrega());
+            }
+            cb_idEntregaPrestamoLibro.setModel(cbm);
+            pantalla_devolucion.pack();
+            pantalla_devolucion.setLocationRelativeTo(null);
+            pantalla_devolucion.setVisible(true);
+        } catch (Exception ex) {
         }
-        cb_idEntregaPrestamoLibro.setModel(cbm);
-        pantalla_devolucion.pack();
-        pantalla_devolucion.setLocationRelativeTo(null);
-        pantalla_devolucion.setVisible(true);
     }//GEN-LAST:event_menuItem_devolverLibroActionPerformed
 
     private void menuItem_createAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_createAlumnoActionPerformed
@@ -2109,7 +1900,19 @@ public class mainPage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -2198,5 +2001,5 @@ public class mainPage extends javax.swing.JFrame {
     private ArrayList<Alumno> alumnos = new ArrayList<>();
     private ArrayList<Maestro> maestros = new ArrayList<>();
     private ArrayList<Prestamo> prestamos = new ArrayList<>();
-    private ConexionAccess ca = new ConexionAccess("C://Users//user1//Desktop//Linda_Possing_Christhian_School.accdb");
+    private ConexionAccess ca = new ConexionAccess("C://Linda_Possing_Christhian_School.accdb");
 }
