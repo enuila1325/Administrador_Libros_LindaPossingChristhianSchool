@@ -133,7 +133,7 @@
         <Component class="javax.swing.JSpinner" name="js_gradoCreacionLibro">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-              <SpinnerModel initial="1" maximum="9" minimum="1" numberType="java.lang.Integer" stepSize="1" type="number"/>
+              <SpinnerModel initial="1" maximum="9" minimum="0" numberType="java.lang.Integer" stepSize="1" type="number"/>
             </Property>
           </Properties>
           <Constraints>
@@ -311,18 +311,19 @@
         <Component class="javax.swing.JComboBox" name="cb_listLibroGrado">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="11">
+              <StringArray count="12">
                 <StringItem index="0" value="----------------"/>
                 <StringItem index="1" value="TODOS"/>
-                <StringItem index="2" value="1ero"/>
-                <StringItem index="3" value="2do"/>
-                <StringItem index="4" value="3ero"/>
-                <StringItem index="5" value="4to"/>
-                <StringItem index="6" value="5to"/>
-                <StringItem index="7" value="6to"/>
-                <StringItem index="8" value="7mo"/>
-                <StringItem index="9" value="8vo"/>
-                <StringItem index="10" value="9no"/>
+                <StringItem index="2" value="Preparatoria"/>
+                <StringItem index="3" value="1ero"/>
+                <StringItem index="4" value="2do"/>
+                <StringItem index="5" value="3ero"/>
+                <StringItem index="6" value="4to"/>
+                <StringItem index="7" value="5to"/>
+                <StringItem index="8" value="6to"/>
+                <StringItem index="9" value="7mo"/>
+                <StringItem index="10" value="8vo"/>
+                <StringItem index="11" value="9no"/>
               </StringArray>
             </Property>
           </Properties>
@@ -1453,26 +1454,14 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItem_edLibriActionPerformed"/>
               </Events>
             </MenuItem>
-            <Menu class="javax.swing.JMenu" name="menu_readLibros">
+            <MenuItem class="javax.swing.JMenuItem" name="menuItem_listLibros">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Ver Libros en Inventario"/>
+                <Property name="text" type="java.lang.String" value="Listar Libros del Inventario"/>
               </Properties>
-              <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="menuItem_readLibrosLectura">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Libros de Lectura para alumnos"/>
-                  </Properties>
-                </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="menuItem_readLibros">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="Libros para ense&#xf1;anza"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItem_readLibrosActionPerformed"/>
-                  </Events>
-                </MenuItem>
-              </SubComponents>
-            </Menu>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItem_listLibrosActionPerformed"/>
+              </Events>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="menuPrestamos">

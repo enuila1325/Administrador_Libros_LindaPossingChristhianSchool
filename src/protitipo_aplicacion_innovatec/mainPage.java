@@ -211,9 +211,7 @@ public class mainPage extends javax.swing.JFrame {
         menuItem_loadCSV = new javax.swing.JMenuItem();
         menuItem_agregarLibro = new javax.swing.JMenuItem();
         menuItem_edLibri = new javax.swing.JMenuItem();
-        menu_readLibros = new javax.swing.JMenu();
-        menuItem_readLibrosLectura = new javax.swing.JMenuItem();
-        menuItem_readLibros = new javax.swing.JMenuItem();
+        menuItem_listLibros = new javax.swing.JMenuItem();
         menuPrestamos = new javax.swing.JMenu();
         menuItem_newPrestamo = new javax.swing.JMenuItem();
         menuItem_devolverLibro = new javax.swing.JMenuItem();
@@ -266,7 +264,7 @@ public class mainPage extends javax.swing.JFrame {
         });
         pantalla_CreacionLibro.getContentPane().add(jb_añadirLibro_A_Inventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(321, 428, -1, -1));
 
-        js_gradoCreacionLibro.setModel(new javax.swing.SpinnerNumberModel(1, 1, 9, 1));
+        js_gradoCreacionLibro.setModel(new javax.swing.SpinnerNumberModel(1, 0, 9, 1));
         pantalla_CreacionLibro.getContentPane().add(js_gradoCreacionLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 194, 83, -1));
 
         jLabel11.setForeground(new java.awt.Color(0, 0, 0));
@@ -359,7 +357,7 @@ public class mainPage extends javax.swing.JFrame {
         });
         jd_listaLibros.getContentPane().add(cb_FiltroMateriaList, new org.netbeans.lib.awtextra.AbsoluteConstraints(343, 40, 315, -1));
 
-        cb_listLibroGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----------------", "TODOS", "1ero", "2do", "3ero", "4to", "5to", "6to", "7mo", "8vo", "9no" }));
+        cb_listLibroGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "----------------", "TODOS", "Preparatoria", "1ero", "2do", "3ero", "4to", "5to", "6to", "7mo", "8vo", "9no" }));
         cb_listLibroGrado.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_listLibroGradoItemStateChanged(evt);
@@ -863,20 +861,13 @@ public class mainPage extends javax.swing.JFrame {
         });
         menuLibro.add(menuItem_edLibri);
 
-        menu_readLibros.setText("Ver Libros en Inventario");
-
-        menuItem_readLibrosLectura.setText("Libros de Lectura para alumnos");
-        menu_readLibros.add(menuItem_readLibrosLectura);
-
-        menuItem_readLibros.setText("Libros para enseñanza");
-        menuItem_readLibros.addActionListener(new java.awt.event.ActionListener() {
+        menuItem_listLibros.setText("Listar Libros del Inventario");
+        menuItem_listLibros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuItem_readLibrosActionPerformed(evt);
+                menuItem_listLibrosActionPerformed(evt);
             }
         });
-        menu_readLibros.add(menuItem_readLibros);
-
-        menuLibro.add(menu_readLibros);
+        menuLibro.add(menuItem_listLibros);
 
         jMenuBar1.add(menuLibro);
 
@@ -1118,30 +1109,6 @@ public class mainPage extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jb_deleteLibroActionPerformed
 
-    private void menuItem_readLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_readLibrosActionPerformed
-        try {
-            DefaultTableModel tm = (DefaultTableModel) t_listLibros.getModel();
-            while (tm.getRowCount() > 0) {
-                tm.removeRow(0);
-            }
-            for (Libro l : libros) {
-                Object datos[] = new Object[5];
-                datos[1] = l.getNombre();
-                datos[0] = l.getBarCode();
-                datos[2] = l.getMateria();
-                datos[3] = l.getDescripcion();
-                datos[4] = l.getGrado();
-                tm.addRow(datos);
-            }
-            t_listLibros.setModel(tm);
-            jd_listaLibros.pack();
-            jd_listaLibros.setModal(true);
-            jd_listaLibros.setLocationRelativeTo(null);
-            jd_listaLibros.setVisible(true);
-        } catch (Exception ex) {
-        }
-    }//GEN-LAST:event_menuItem_readLibrosActionPerformed
-
     private void cb_FiltroMateriaListItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_FiltroMateriaListItemStateChanged
         try {
             DefaultTableModel tm = (DefaultTableModel) t_listLibros.getModel();
@@ -1159,20 +1126,35 @@ public class mainPage extends javax.swing.JFrame {
                     datos[4] = l.getGrado();
                     tm.addRow(datos);
                 }
-            } else if (cb_FiltroMateriaList.getSelectedItem().equals("Todos las materias")) {
-                int filtroGrado = Character.getNumericValue(cb_listLibroGrado.getSelectedItem().toString().charAt(0));
-                for (Libro l : libros) {
-                    if (filtroGrado == l.getGrado()) {
-                        Object datos[] = new Object[5];
-                        datos[1] = l.getNombre();
-                        datos[0] = l.getBarCode();
-                        datos[2] = l.getMateria();
-                        datos[3] = l.getDescripcion();
-                        datos[4] = l.getGrado();
-                        tm.addRow(datos);
+            } else if (cb_FiltroMateriaList.getSelectedItem().equals("Todos las materias") && !(cb_listLibroGrado.getSelectedItem().equals("TODOS"))) {
+                if (cb_listLibroGrado.getSelectedItem().toString().equals("Preparatoria")) {
+                    for (Libro l : libros) {
+                        if (0 == l.getGrado()) {
+                            Object datos[] = new Object[5];
+                            datos[1] = l.getNombre();
+                            datos[0] = l.getBarCode();
+                            datos[2] = l.getMateria();
+                            datos[3] = l.getDescripcion();
+                            datos[4] = l.getGrado();
+                            tm.addRow(datos);
+                        }
                     }
+                } else {
+                    int filtroGrado = Character.getNumericValue(cb_listLibroGrado.getSelectedItem().toString().charAt(0));
+                    for (Libro l : libros) {
+                        if (filtroGrado == l.getGrado()) {
+                            Object datos[] = new Object[5];
+                            datos[1] = l.getNombre();
+                            datos[0] = l.getBarCode();
+                            datos[2] = l.getMateria();
+                            datos[3] = l.getDescripcion();
+                            datos[4] = l.getGrado();
+                            tm.addRow(datos);
+                        }
+                    }
+                    filtroGrado = 0;
                 }
-            } else if (cb_selectorGradoLista.getSelectedItem().equals("TODOS")) {
+            } else if (cb_listLibroGrado.getSelectedItem().equals("TODOS") && !(cb_FiltroMateriaList.getSelectedItem().equals("Todos las materias"))) {
                 for (Libro l : libros) {
                     if (l.getMateria().equals(cb_FiltroMateriaList.getSelectedItem().toString())) {
                         Object datos[] = new Object[5];
@@ -1184,20 +1166,20 @@ public class mainPage extends javax.swing.JFrame {
                         tm.addRow(datos);
                     }
                 }
-            } else {
-                int filtroGrado = Character.getNumericValue(cb_listLibroGrado.getSelectedItem().toString().charAt(0));
-                for (Libro l : libros) {
-                    if (l.getMateria().equals(cb_FiltroMateriaList.getSelectedItem().toString()) && filtroGrado == l.getGrado()) {
-                        Object datos[] = new Object[5];
-                        datos[1] = l.getNombre();
-                        datos[0] = l.getBarCode();
-                        datos[2] = l.getMateria();
-                        datos[3] = l.getDescripcion();
-                        datos[4] = l.getGrado();
-                        tm.addRow(datos);
-                    }
-                }
-            }
+            } //else {
+//                int filtroGrado = Character.getNumericValue(cb_listLibroGrado.getSelectedItem().toString().charAt(0));
+//                for (Libro l : libros) {
+//                    if (l.getMateria().equals(cb_FiltroMateriaList.getSelectedItem().toString()) && filtroGrado == l.getGrado()) {
+//                        Object datos[] = new Object[5];
+//                        datos[1] = l.getNombre();
+//                        datos[0] = l.getBarCode();
+//                        datos[2] = l.getMateria();
+//                        datos[3] = l.getDescripcion();
+//                        datos[4] = l.getGrado();
+//                        tm.addRow(datos);
+//                    }
+//                }
+//            }
             t_listLibros.setModel(tm);
         } catch (Exception ex) {
         }
@@ -1509,20 +1491,34 @@ public class mainPage extends javax.swing.JFrame {
                     datos[4] = l.getGrado();
                     tm.addRow(datos);
                 }
-            } else if (cb_FiltroMateriaList.getSelectedItem().equals("Todos las materias")) {
-                int filtroGrado = Character.getNumericValue(cb_listLibroGrado.getSelectedItem().toString().charAt(0));
-                for (Libro l : libros) {
-                    if (filtroGrado == l.getGrado()) {
-                        Object datos[] = new Object[5];
-                        datos[1] = l.getNombre();
-                        datos[0] = l.getBarCode();
-                        datos[2] = l.getMateria();
-                        datos[3] = l.getDescripcion();
-                        datos[4] = l.getGrado();
-                        tm.addRow(datos);
+            } else if (cb_FiltroMateriaList.getSelectedItem().equals("Todos las materias") && !(cb_selectorGradoLista.getSelectedItem().equals("TODOS"))) {
+                if (cb_listLibroGrado.getSelectedItem().toString().equals("Preparatoria")) {
+                    for (Libro l : libros) {
+                        if (0 == l.getGrado()) {
+                            Object datos[] = new Object[5];
+                            datos[1] = l.getNombre();
+                            datos[0] = l.getBarCode();
+                            datos[2] = l.getMateria();
+                            datos[3] = l.getDescripcion();
+                            datos[4] = l.getGrado();
+                            tm.addRow(datos);
+                        }
+                    }
+                } else {
+                    int filtroGrado = Character.getNumericValue(cb_listLibroGrado.getSelectedItem().toString().charAt(0));
+                    for (Libro l : libros) {
+                        if (filtroGrado == l.getGrado()) {
+                            Object datos[] = new Object[5];
+                            datos[1] = l.getNombre();
+                            datos[0] = l.getBarCode();
+                            datos[2] = l.getMateria();
+                            datos[3] = l.getDescripcion();
+                            datos[4] = l.getGrado();
+                            tm.addRow(datos);
+                        }
                     }
                 }
-            } else if (cb_selectorGradoLista.getSelectedItem().equals("TODOS")) {
+            } else if (cb_selectorGradoLista.getSelectedItem().equals("TODOS") && !(cb_FiltroMateriaList.getSelectedItem().equals("Todos las materias"))) {
                 for (Libro l : libros) {
                     if (l.getMateria().equals(cb_FiltroMateriaList.getSelectedItem().toString())) {
                         Object datos[] = new Object[5];
@@ -1534,20 +1530,20 @@ public class mainPage extends javax.swing.JFrame {
                         tm.addRow(datos);
                     }
                 }
-            } else {
-                int filtroGrado = Character.getNumericValue(cb_listLibroGrado.getSelectedItem().toString().charAt(0));
-                for (Libro l : libros) {
-                    if (l.getMateria().equals(cb_FiltroMateriaList.getSelectedItem().toString()) && filtroGrado == l.getGrado()) {
-                        Object datos[] = new Object[5];
-                        datos[1] = l.getNombre();
-                        datos[0] = l.getBarCode();
-                        datos[2] = l.getMateria();
-                        datos[3] = l.getDescripcion();
-                        datos[4] = l.getGrado();
-                        tm.addRow(datos);
-                    }
-                }
-            }
+            } //else {
+//                int filtroGrado = Character.getNumericValue(cb_listLibroGrado.getSelectedItem().toString().charAt(0));
+//                for (Libro l : libros) {
+//                    if (l.getMateria().equals(cb_FiltroMateriaList.getSelectedItem().toString()) && filtroGrado == l.getGrado()) {
+//                        Object datos[] = new Object[5];
+//                        datos[1] = l.getNombre();
+//                        datos[0] = l.getBarCode();
+//                        datos[2] = l.getMateria();
+//                        datos[3] = l.getDescripcion();
+//                        datos[4] = l.getGrado();
+//                        tm.addRow(datos);
+//                    }
+//                }
+//            }
             t_listLibros.setModel(tm);
         } catch (Exception ex) {
         }
@@ -1819,6 +1815,30 @@ public class mainPage extends javax.swing.JFrame {
         ca.desconectar();
     }//GEN-LAST:event_jb_eliminarMaestroActionPerformed
 
+    private void menuItem_listLibrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItem_listLibrosActionPerformed
+        try {
+            DefaultTableModel tm = (DefaultTableModel) t_listLibros.getModel();
+            while (tm.getRowCount() > 0) {
+                tm.removeRow(0);
+            }
+            for (Libro l : libros) {
+                Object datos[] = new Object[5];
+                datos[1] = l.getNombre();
+                datos[0] = l.getBarCode();
+                datos[2] = l.getMateria();
+                datos[3] = l.getDescripcion();
+                datos[4] = l.getGrado();
+                tm.addRow(datos);
+            }
+            t_listLibros.setModel(tm);
+            jd_listaLibros.pack();
+            jd_listaLibros.setModal(true);
+            jd_listaLibros.setLocationRelativeTo(null);
+            jd_listaLibros.setVisible(true);
+        } catch (Exception ex) {
+        }
+    }//GEN-LAST:event_menuItem_listLibrosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1950,17 +1970,15 @@ public class mainPage extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuItem_devolverLibro;
     private javax.swing.JMenuItem menuItem_edLibri;
     private javax.swing.JMenuItem menuItem_listAlumnos;
+    private javax.swing.JMenuItem menuItem_listLibros;
     private javax.swing.JMenuItem menuItem_listMaestros;
     private javax.swing.JMenuItem menuItem_loadCSV;
     private javax.swing.JMenuItem menuItem_modAlumno;
     private javax.swing.JMenuItem menuItem_modMaestro;
     private javax.swing.JMenuItem menuItem_newPrestamo;
-    private javax.swing.JMenuItem menuItem_readLibros;
-    private javax.swing.JMenuItem menuItem_readLibrosLectura;
     private javax.swing.JMenu menuLibro;
     private javax.swing.JMenu menuPrestamos;
     private javax.swing.JMenu menuUsuarios;
-    private javax.swing.JMenu menu_readLibros;
     private javax.swing.JFrame pantalla_ActualizarAlumno;
     private javax.swing.JFrame pantalla_CreacionLibro;
     private javax.swing.JFrame pantalla_EliminarLibro;
