@@ -349,7 +349,7 @@ public class mainPage extends javax.swing.JFrame {
 
         jd_listaLibros.getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 130, 671, 301));
 
-        cb_FiltroMateriaList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----------------------------------------------------------------------", "Todos las materias", "Math", "Reading", "Spelling", "Language", "Social Studies", "Arts", "Spanish", "History", "Computer", "Science", "Civics", "Otras..." }));
+        cb_FiltroMateriaList.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-----------------------------------------------------------------------", "Todos las materias", "Math", "Literature", "Word Building", "Etimology", "Social Studies", "Arts", "Spanish", "History", "Computer", "Science", "Biology", "Cívica", "Otras...." }));
         cb_FiltroMateriaList.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_FiltroMateriaListItemStateChanged(evt);
