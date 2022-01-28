@@ -1209,6 +1209,7 @@ public class mainPage extends javax.swing.JFrame {
             pantalla_prestamos.setLocationRelativeTo(null);
             pantalla_prestamos.setVisible(true);
         } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }//GEN-LAST:event_menuItem_newPrestamoActionPerformed
 
@@ -1651,33 +1652,39 @@ public class mainPage extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_maestroSolictanteItemStateChanged
 
     private void cb_idLibroPrestarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_idLibroPrestarItemStateChanged
-        for (Libro l : libros) {
-            if (l.getBarCode().equals(cb_idLibroPrestar.getSelectedItem().toString())) {
-                tf_nombreLibroPrestar.setText(l.getNombre());
-                break;
+        try {
+            for (Libro l : libros) {
+                if (l.getBarCode().equals(cb_idLibroPrestar.getSelectedItem().toString())) {
+                    tf_nombreLibroPrestar.setText(l.getNombre());
+                    break;
+                }
             }
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_cb_idLibroPrestarItemStateChanged
 
     private void cb_idEntregaPrestamoLibroItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_idEntregaPrestamoLibroItemStateChanged
-        for (Prestamo p : prestamos) {
-            if (Integer.parseInt(cb_idEntregaPrestamoLibro.getSelectedItem().toString()) == p.getIdEntrega()) {
-                tf_codBarrasLibroEntregado.setText(p.getCodBarrasLibroPrestado());
-                if (p.getTipoSolicitante().equals("Personal")) {
-                    for (Maestro m : maestros) {
-                        if (m.getId() == p.getIdSolictante()) {
-                            tf_entregadoPor.setText(m.getNombre());
+        try {
+            for (Prestamo p : prestamos) {
+                if (Integer.parseInt(cb_idEntregaPrestamoLibro.getSelectedItem().toString()) == p.getIdEntrega()) {
+                    tf_codBarrasLibroEntregado.setText(p.getCodBarrasLibroPrestado());
+                    if (p.getTipoSolicitante().equals("Personal")) {
+                        for (Maestro m : maestros) {
+                            if (m.getId() == p.getIdSolictante()) {
+                                tf_entregadoPor.setText(m.getNombre());
+                            }
+                        }
+                    } else if (p.getTipoSolicitante().equals("Alumno")) {
+                        for (Alumno a : alumnos) {
+                            if (a.getId() == p.getIdSolictante()) {
+                                tf_entregadoPor.setText(a.getNombre());
+                            }
                         }
                     }
-                } else if (p.getTipoSolicitante().equals("Alumno")) {
-                    for (Alumno a : alumnos) {
-                        if (a.getId() == p.getIdSolictante()) {
-                            tf_entregadoPor.setText(a.getNombre());
-                        }
-                    }
+                    break;
                 }
-                break;
             }
+        } catch (Exception e) {
         }
     }//GEN-LAST:event_cb_idEntregaPrestamoLibroItemStateChanged
 
